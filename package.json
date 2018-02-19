@@ -53,6 +53,8 @@
     "feathers-mongoose": "^3.6.2",
     "feathers-rest": "^1.6.0",
     "feathers-socketio": "^1.4.2",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
     "mongoose": "^4.8.1",
     "passport": "^0.3.2",
     "serve-favicon": "^2.3.2",
