@@ -1,8 +1,9 @@
 'use strict';
 
-const handler = require('feathers-errors/handler');
-const notFound = require('./not-found-handler');
+// const handler = require('@feathersjs/errors/handler');
+// const notFound = require('./not-found-handler');
 const logger = require('./logger');
+const express = require('@feathersjs/express');
 
 module.exports = function () {
   // Add your custom middleware here. Remember, that
@@ -16,7 +17,9 @@ module.exports = function () {
     webpackDev(app);
   }
 
-  app.use(notFound());
-  app.use(logger(app));
-  app.use(handler());
+  //app.use(notFound());
+  // app.use(logger(app));
+  // app.use(handler());
+  app.use(express.notFound());
+  app.use(express.errorHandler({ logger }));
 };

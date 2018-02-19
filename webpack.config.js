@@ -4,11 +4,22 @@ const path = require('path');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var fs = require('fs');
 
 const host = (process.env.HOST) ? process.env.HOST : config.host;
 const port = (process.env.PORT) ? process.env.PORT : config.port;
 
+var nodeModules = {};
+fs.readdirSync('node_modules')
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
+
 const baseConfig = {
+  externals: nodeModules,
   entry: [
     './app/main.js'
   ],
@@ -16,6 +27,9 @@ const baseConfig = {
     path: path.resolve(__dirname, 'public'),
     filename: 'js/[name].js',
     publicPath: '/'
+  },
+  node: {
+    fs: "empty"
   },
   module: {
     rules: [

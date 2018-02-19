@@ -4,9 +4,7 @@
   "mongodb": "mongodb://localhost:27017/plumage",
   "public": "../public/",
   "auth": {
-    "token": {
-      "secret": "yXhRspivaJHW57G1EWzjKGej25U5yizC1W5Z3m24WsW5qbtlbtNPBJw8IE9Ta62Cg+HqXd7WukI62cw8XGVGRQ=="
-    },
+    "secret": "yXhRspivaJHW57G1EWzjKGej25U5yizC1W5Z3m24WsW5qbtlbtNPBJw8IE9Ta62Cg+HqXd7WukI62cw8XGVGRQ==",
     "local": {}
   }
 }

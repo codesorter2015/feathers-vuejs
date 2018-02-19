@@ -1,6 +1,8 @@
 'use strict';
 
-const authentication = require('feathers-authentication');
+const authentication = require('@feathersjs/authentication');
+const local = require('@feathersjs/authentication-local');
+const jwt = require('@feathersjs/authentication-jwt');
 
 module.exports = function () {
   const app = this;
@@ -8,4 +10,6 @@ module.exports = function () {
   let config = app.get('auth');
 
   app.configure(authentication(config));
+//   app.configure(local);
+//   app.configure(jwt);
 };
